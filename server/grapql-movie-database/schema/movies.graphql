@@ -1,0 +1,36 @@
+type Movie implements Media @cacheControl(maxAge: 10000) {
+  # ===================================================================
+  #  Media fields
+  # ===================================================================
+  accountStates: AccountStates
+  backdropPath: String
+  backdrops: [Image!]!
+  cast(first: Int): [CastCredit!]!
+  crew(departments: [CrewDepartment!]): [CrewCredit!]!
+  genres: [Genre!]!
+  homepage: String
+  id: ID!
+  mediaType: MediaType!
+  originalLanguage: String!
+  originalTitle: String!
+  overview: String
+  popularity: Float!
+  posterPath: String
+  posters: [Image!]!
+  productionCompanies: [Company!]!
+  reviews(page: Int): ReviewsConnection
+  releaseDate: String!
+  status: String!
+  title: String!
+  videos(type: VideoType): [Video!]!
+  voteAverage: Float!
+  voteCount: Int!
+  # ===================================================================
+  #  Movie fields
+  # ===================================================================
+  budget: Int!
+  productionCountries: [Country!]!
+  revenue: Int!
+  runtime: Int
+  tagline: String
+}
